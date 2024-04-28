@@ -58,7 +58,5 @@ initial_state = ss.init_state({
     "app": {
         "title": "Ask AI",
     },
-    "_my_private_element": 1337,
     "message": None,
-    "counter": 26,
 })
