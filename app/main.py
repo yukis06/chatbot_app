@@ -2,6 +2,7 @@ import os
 
 import streamsync as ss
 from dotenv import load_dotenv
+from langchain_community.callbacks import get_openai_callback
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_openai import ChatOpenAI
 
@@ -16,8 +17,9 @@ def call_llm(prompt):
         SystemMessage(content="You are a helpful assistant."),
         HumanMessage(content=prompt)
     ]
-    response = llm(messages)
-    print(response)
+    with get_openai_callback() as cb:
+        response = llm(messages)
+        print(cb)
     return response.content
 
 def handle_user_input(payload):
