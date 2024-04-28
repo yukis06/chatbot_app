@@ -50,7 +50,7 @@
             "position": 1,
             "parentId": "c0f99a9e-5004-4e75-a6c6-36f17490b134",
             "handlers": {
-                "ss-chatbot-action-click": "handle_message_simple"
+                "ss-chatbot-message": "handle_user_input"
             },
             "visible": true
         }

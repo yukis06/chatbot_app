@@ -43,8 +43,11 @@ def call_gpt4(prompt):
     return response.json()['choices'][0]['message']['content']
 
 def handle_user_input(payload):
-    gpt_response = call_gpt4(payload)
-    return gpt_response
+    if payload == "":
+        return "Please enter a message"
+    else:
+        gpt_response = call_gpt4(payload)
+        return gpt_response
 
 def handle_message_simple(payload):
     query = payload
